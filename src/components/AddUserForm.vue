@@ -3,20 +3,19 @@
         <div class="add-form" v-if="!addComplete">
             <h2>Add new user</h2>
             <form @submit.prevent="addUser()">
-                <input type="text" name="name" v-model="name" placeholder="Name">
-                <input type="text" name="email" v-model="email" placeholder="E-mail">
-                <input type="text" name="city" v-model="city" placeholder="City">
-                <input type="text" name="street" v-model="street" placeholder="Street">
-                <input type="text" name="phone" v-model="phone" placeholder="Phone">
-                <input type="text" name="website" v-model="website" placeholder="Website">
-                <input type="text" name="company" v-model="company" placeholder="Company">
+                <input type="text" name="name" v-model="name" required placeholder="Name">
+                <input type="text" name="email" v-model="email" required placeholder="E-mail">
+                <input type="text" name="city" v-model="city" required placeholder="City">
+                <input type="text" name="street" v-model="street" required placeholder="Street">
+                <input type="text" name="phone" v-model="phone" required placeholder="Phone">
+                <input type="text" name="website" v-model="website" required placeholder="Website">
+                <input type="text" name="company" v-model="company" required placeholder="Company">
                 <input type="submit" value="Add user">
             </form>
         </div>
-        <div class="add-msg" v-else>
-            <div class="msg msg-success">
-                <h2>User added</h2>
-            </div>
+        <div class="msg" v-else>
+            <h2>User added</h2>
+            <router-link to="/" class="btn-primary">Go back to main page</router-link>
         </div>
     </div>
 </template>
@@ -53,10 +52,14 @@ export default {
                     "name": this.company
                 }
             }
+            if(newUser.name !== "" && newUser.email !== "" 
+                && newUser.address.city !== "" && newUser.address.street !== "" 
+                && newUser.phone !== "" && newUser.website !== "" && newUser.company.name !== ""){
 
-            this.$emit('addUser', newUser)
+                this.$emit('addUser', newUser)
+                this.addComplete = true
+            }
 
-            this.addComplete = true
         }
         
     }
@@ -103,9 +106,17 @@ input[type="submit"]{
 }
 
 
-.add-msg{
-    min-height: 70vh;
-    position: relative;
+.btn-primary{
+    text-align: center;
+    width: 80%;
+    height: 3rem;
+    margin: 1rem auto;
+    padding: 1rem 0;
+    border-radius: 2rem;
+    background: $primary-color;
+    color: $third-color;
+    text-decoration: none;
+    display: block;
 }
 
 @media(min-width: 768px){
@@ -113,6 +124,11 @@ input[type="submit"]{
         width: 20%;
         margin-left: 60%;
     }   
+
+
+    .btn-primary{
+        width: 50%;
+    }
 }
 
 </style>

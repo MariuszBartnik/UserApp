@@ -27,13 +27,6 @@ $third-color: #f4f4f4;
   display: flex;
   justify-content: space-between;
 
-  ul{
-    list-style: none;
-    display: flex;
-    width: 30%;
-    justify-content: space-around;
-  }
-
   a{
     color: $third-color;
     text-decoration: none;

@@ -11,7 +11,7 @@
             </div>    
         </div>
         <div class="showcase-icon">
-            <img src="@/assets/logo.png" alt="">
+            <img alt="Vue.js Logo" src="../assets/logo.png">
         </div>
 
     </div>

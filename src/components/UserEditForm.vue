@@ -13,10 +13,9 @@
                 <input type="submit" value="Edit user">
             </form>
         </div>
-        <div class="edit-msg" v-else>
-            <div class="msg msg-success">
-                <h2>Used edition completed</h2>
-            </div>
+        <div class="msg" v-else>
+            <h2>Used edition completed</h2>
+            <router-link to="/" class="btn-primary">Go back to main page</router-link>
         </div>
     </div>
 </template>
@@ -56,9 +55,15 @@ export default {
                 }
             }
 
-            this.$emit('editUser', editedUser);
+            if(editedUser.name !== "" && editedUser.email !== "" 
+                && editedUser.address.city !== "" && editedUser.address.street !== "" 
+                && editedUser.phone !== "" && editedUser.website !== "" && editedUser.company.name !== ""){
 
-            this.editComplete = true
+                this.$emit('editUser', editedUser);
+                this.editComplete = true
+            }
+
+
         }
     }
 }
@@ -103,9 +108,17 @@ input[type="submit"]{
     } 
 }
 
-.edit-msg{
-    min-height: 70vh;
-    position: relative;
+.btn-primary{
+    text-align: center;
+    width: 80%;
+    height: 3rem;
+    margin: 1rem auto;
+    padding: 1rem 0;
+    border-radius: 2rem;
+    background: $primary-color;
+    color: $third-color;
+    text-decoration: none;
+    display: block;
 }
 
 @media(min-width: 768px){
@@ -113,6 +126,10 @@ input[type="submit"]{
         width: 20%;
         margin-left: 60%;
     }   
+
+    .btn-primary{
+        width: 50%;
+    }
 }
 
 

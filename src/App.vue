@@ -77,27 +77,17 @@ $third-color: #f4f4f4;
 }
 
 .msg{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin: 5rem auto;
   width: 70%;
   padding: 2rem;
   border-radius: 5px;
   box-shadow: 5px 5px 10px rgba(0,0,0,0.4);
-  
+  background: $secondary-color;
+  color: $third-color;
+
   h2{
       font-size: 2rem;
   }
-}
-.msg-danger{
-    background: #8d0303;
-    color: $third-color;
-}
-
-.msg-success{
-    background: #055005;
-    color: $third-color;
 }
 
 </style>

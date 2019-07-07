@@ -12,10 +12,9 @@
                 <button class="btn btn-secondary"><router-link to="/">Cancel</router-link></button>    
             </div>
         </div>
-        <div class="delete-msg" v-else>
-            <div class="msg msg-danger">
-                <h2>User deleted</h2>
-            </div>
+        <div class="msg" v-else>
+            <h2>User deleted</h2>
+            <router-link to="/" class="btn-primary">Go back to main page</router-link>
         </div>
     </div>
 </template>
@@ -52,19 +51,6 @@ $third-color: #f4f4f4;
         min-height: 70vh;
     }
 
-    .user{
-        margin: 1rem 0;
-        text-align: center;
-        
-        h2{
-            margin-bottom: 1rem;
-        }
-        
-        p{
-            color:$secondary-color; 
-        }
-
-    }
     img{
         width: 250px;
         height: 250px;
@@ -106,28 +92,24 @@ $third-color: #f4f4f4;
         }        
     }
 
-    .delete-msg{
-        min-height: 70vh;
-        position: relative;
-    }
 
-    .msg{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 70%;
-        padding: 2rem;
-        border-radius: 5px;
-        box-shadow: 5px 5px 10px rgba(0,0,0,0.4);
-        
-        h2{
-            font-size: 2rem;
-        }
-    }
-    .msg-danger{
-        background: #8d0303;
-        color: $third-color;
-    }
 
+.btn-primary{
+    text-align: center;
+    width: 80%;
+    height: 3rem;
+    margin: 1rem auto;
+    padding: 1rem 0;
+    border-radius: 2rem;
+    background: $primary-color;
+    color: $third-color;
+    text-decoration: none;
+    display: block;
+}
+
+@media(min-width: 768px){
+    .btn-primary{
+        width: 50%;
+    }
+}
 </style>
