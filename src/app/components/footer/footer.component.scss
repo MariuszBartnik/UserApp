@@ -1,0 +1,12 @@
+$primary-color: #d30036;
+$secondary-color: #2768cb;
+$third-color: #f4f4f4;
+
+footer{
+    background: $secondary-color;
+    color: $third-color;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.3rem;
+    border-top: 3px solid $primary-color;
+}

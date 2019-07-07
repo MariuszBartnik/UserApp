@@ -1,0 +1,19 @@
+<div class="delete-confirmation" *ngIf="!submitted">
+    <h2>Are You sure You want to delete this User?</h2>
+    <img [src]="getImage()" alt="">
+    <h2>{{ currentUser.name }}</h2>
+    <p>Email: {{ currentUser.email }}</p>
+    <p>Phone: {{ currentUser.phone }}</p>
+
+    <div class="buttons">
+        <button class="btn btn-danger" (click)="delete()">Confirm</button>
+        <button class="btn btn-secondary" (click)="cancel()">Cancel</button>    
+    </div>
+</div>
+
+
+
+<div class="msg" *ngIf="submitted">
+    <h2>User deleted</h2>
+    <button (click)="mainPage()">Go back to Main Page</button>
+</div>

@@ -1,0 +1,36 @@
+<div class="user-detail-info">
+  <img [src]="getImage()" alt="">
+  <h2> My name is <br> <span>{{ currentUser.name }}</span></h2>
+  <div class="output">
+      <h4 *ngIf="currentDetail === 'email'">My email address is: <br><span>{{currentUser.email}}</span>  </h4>
+      <h4 *ngIf="currentDetail === 'phone'">My phone number is: <br><span>{{currentUser.phone}}</span>  </h4>
+      <h4 *ngIf="currentDetail === 'address'">My address is: <br><span>{{currentUser.address.street}}, {{currentUser.address.city}}</span>  </h4>
+      <h4 *ngIf="currentDetail === 'company'">Currently I work for: <br><span>{{currentUser.company.name}}</span>  </h4>
+      <h4 *ngIf="currentDetail === 'website'">My website address is: <br><span>{{currentUser.website}}</span>  </h4>      
+  </div>
+
+  <div class="form">
+      <button class="btn-primary" [ngClass]="{'active': currentDetail=='email'}" (click)="setCurrentDetail('email')">
+          <i class="fas fa-envelope"></i>
+      </button>
+      <button class="btn-primary"  [ngClass]="{'active': currentDetail=='phone'}" (click)="setCurrentDetail('phone')">
+          <i class="fas fa-phone"></i>
+      </button>
+      <button class="btn-primary" [ngClass]="{'active': currentDetail=='address'}" (click)="setCurrentDetail('address')">
+          <i class="fas fa-map-marker-alt"></i>
+      </button>
+      <button class="btn-primary" [ngClass]="{'active': currentDetail=='company'}" (click)="setCurrentDetail('company')">
+          <i class="fas fa-user-tie"></i>
+      </button>
+      <button class="btn-primary" [ngClass]="{'active': currentDetail=='website'}" (click)="setCurrentDetail('website')">
+          <i class="fas fa-globe"></i>
+      </button>
+  </div>
+
+
+  <div class="edit">
+      <button class="btn-secondary btn-edit" (click)="editUser()">Edit user</button>
+      <button class="btn-secondary btn-delete" (click)="deleteUser()">Delete User</button>
+  </div>
+
+</div>

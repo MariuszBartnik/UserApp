@@ -1,0 +1,77 @@
+<div class="add-form" *ngIf="!submitted">
+    <h2>Add new user</h2>
+    <form (ngSubmit)="form.form.valid && addUser()" #form="ngForm">
+        <input 
+            type="text" 
+            name="name" 
+            [(ngModel)]="name" 
+            #nameInput="ngModel" 
+            [ngClass]="{ 'is-invalid': form.submitted && nameInput.invalid }" 
+            required 
+            placeholder="Name"
+        >
+        <input 
+            type="text" 
+            name="email" 
+            [(ngModel)]="email" 
+            #emailInput="ngModel" 
+            [ngClass]="{ 'is-invalid': form.submitted && emailInput.invalid }" 
+            required 
+            placeholder="E-mail"
+        >
+        <input 
+            type="text" 
+            name="city" 
+            [(ngModel)]="city" 
+            #cityInput="ngModel" 
+            [ngClass]="{ 'is-invalid': form.submitted && cityInput.invalid }" 
+            required 
+            placeholder="City"
+        >
+        <input 
+            type="text" 
+            name="street" 
+            [(ngModel)]="street" 
+            #streetInput="ngModel" 
+            [ngClass]="{ 'is-invalid': form.submitted && streetInput.invalid }" 
+            required 
+            placeholder="Street"
+        >
+        <input 
+            type="text" 
+            name="phone" 
+            [(ngModel)]="phone" 
+            #phoneInput="ngModel" 
+            [ngClass]="{ 'is-invalid': form.submitted && phoneInput.invalid }" 
+            required 
+            placeholder="Phone"
+        >
+        <input 
+            type="text" 
+            name="website" 
+            [(ngModel)]="website" 
+            #websiteInput="ngModel" 
+            [ngClass]="{ 'is-invalid': form.submitted && websiteInput.invalid }" 
+            required 
+            placeholder="Website"
+        >
+        <input 
+            type="text" 
+            name="company" 
+            [(ngModel)]="company" 
+            #companyInput="ngModel" 
+            [ngClass]="{ 'is-invalid': form.submitted && companyInput.invalid }" 
+            required 
+            placeholder="Company"
+        >
+        <input 
+            type="submit" 
+            value="Add user"
+        >
+    </form>
+</div>
+
+<div class="msg" *ngIf="submitted">
+    <h2>User added</h2>
+    <button (click)="mainPage()">Go back to Main Page</button>
+</div>

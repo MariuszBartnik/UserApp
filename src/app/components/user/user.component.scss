@@ -1,0 +1,40 @@
+$primary-color: #d30036;
+$secondary-color: #2768cb;
+$third-color: #f4f4f4;
+
+.user{
+    margin: 1rem 0;
+    text-align: center;
+    
+    h2{
+        margin-bottom: 1rem;
+    }
+    
+    p{
+        color:$secondary-color; 
+    }
+
+}
+img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: block;
+    margin: 0.5rem auto;
+}
+
+.btn-primary{
+    background: $primary-color;
+    color: $third-color;
+    width: 80%;
+    padding: 1rem 0;
+    margin: 1rem auto;
+    text-decoration: none;
+    border-radius: 1.5rem;
+    border: none;
+    outline: none;
+
+    &:hover{
+        cursor: pointer;
+    }
+}

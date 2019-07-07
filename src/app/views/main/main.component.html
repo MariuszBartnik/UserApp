@@ -1,0 +1,16 @@
+<div class="main" *ngIf="currentComponent === 'main'">
+    <app-showcase></app-showcase>
+    <app-users [users]="users"></app-users>
+</div>
+<div class="userDetails" *ngIf="currentComponent === 'userDetails'">
+    <app-user-details></app-user-details>
+</div>
+<div class="addUser" *ngIf="currentComponent === 'addUser'">
+    <app-add-user (newUser)="addNewUser($event)"></app-add-user>
+</div>
+<div class="editUser" *ngIf="currentComponent === 'editUser'">
+    <app-edit-user (editedUserComplete)="editUser($event)"></app-edit-user>
+</div>
+<div class="deleteUser" *ngIf="currentComponent === 'deleteUser'">
+    <app-delete-user (deletedUser)="deleteUser($event)"></app-delete-user>
+</div>

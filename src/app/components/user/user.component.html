@@ -1,0 +1,7 @@
+<div class="user">
+    <img [src]="getImage()" alt="">
+    <h2>{{ user.name }}</h2>
+    <p>Email: {{ user.email }}</p>
+    <p>Phone: {{ user.phone }}</p>
+    <button (click)="showDetails()" class="btn-primary">See more details</button>
+</div>

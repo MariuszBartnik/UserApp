@@ -1,0 +1,22 @@
+$primary-color: #d30036;
+$secondary-color: #2768cb;
+$third-color: #f4f4f4;
+
+
+.users{
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 5% 10%; 
+}
+
+@media(min-width: 768px){
+    .users{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(min-width: 992px){
+    .users{
+        grid-template-columns: repeat(4, 1fr);
+    }        
+}
