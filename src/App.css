@@ -1,26 +1,80 @@
-.App {
+/* Navbar */
+
+#nav{
+  background: #282c34;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-btn{
+  color: #f4f4f4;
+  background: transparent;
+  text-decoration: none;
+}
+
+.nav-btn:hover{
+  cursor: pointer;
+}
+
+.add-user{
+  background: #61dafb;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.5rem;
   text-align: center;
+  line-height: 2rem;
+  border-radius: 50%;
+}
+
+.add-user:hover{
+  color: #282c34;
+}
+
+/* Showcase */
+
+.showcase{
+  display: flex;
+  height: 80vh;
+  background: #f4f4f4;
+  color: #282c34;
+  text-align: center;
+  border-top: 3px solid #61dafb;
+  border-bottom: 3px solid #61dafb;
+}
+
+.showcase-title{
+  width: 50%;
+  padding-top: 20vh;
+}
+
+.showcase h1{
+  color: #61dafb;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.showcase-icon{
+  width:50%;
+  background: #282c34;
+  padding-top: 20vh;
+}
+
+.showcase .btn-primary{
+  width: 80%;
+  margin: 1rem auto;
+  padding: 1.5rem 0;
+  border-radius: 2rem;
+  background: #61dafb;
+  color: #f4f4f4;
+  text-decoration: none;
+  display: block;
 }
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
   pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 @keyframes App-logo-spin {
@@ -31,3 +85,306 @@
     transform: rotate(360deg);
   }
 }
+
+@media(min-width: 768px){
+  .showcase h1{
+    font-size: 3.5rem;
+  }
+
+  .showcase .btn-primary{
+    width: 45%;
+  }   
+}
+
+
+/* Users */
+
+
+.users{
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 5% 10%; 
+}
+
+@media(min-width: 768px){
+  .users{
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(min-width: 992px){
+  .users{
+      grid-template-columns: repeat(4, 1fr);
+  }        
+}
+
+/* User */
+
+.user{
+  margin: 1rem 0;
+  text-align: center;
+} 
+.user h2{
+  margin-bottom: 1rem;
+}
+  
+.user p{
+  color:#282c34; 
+}
+
+.user img{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: block;
+  margin: 0.5rem auto;
+}
+
+.btn-user-details{
+  background: #61dafb;
+  color: #f4f4f4;
+  width: 80%;
+  padding: 1rem 0;
+  margin: 1rem auto;
+  text-decoration: none;
+  border-radius: 1.5rem;
+  display: block;
+  border: none;
+  outline: none;
+}
+
+.btn-user-details:hover{
+  color: #282c34;
+  cursor: pointer;
+}
+
+/* Add User form */
+
+.add-user-form h2{
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.add-user-form form{
+  margin: 3rem 0;
+}
+
+.add-user-form input[type="text"]{
+  display: block;
+  width: 60%;
+  margin: 1.2rem auto;
+  font-size: 1.2rem;
+  padding: 0.2rem 1rem;
+}
+
+.add-user-form input[type="submit"]{
+  display: block;
+  width: 60%;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  margin: 0 auto;
+  border: none;
+  background: #61dafb;
+  color: #f4f4f4;
+  border-radius: 1.5rem;
+}
+
+.add-user-form input[type="submit"]:hover{
+  cursor: pointer;
+  color: #282c34;
+}
+
+@media(min-width: 768px){
+  .add-user-form input[type="submit"]{
+      width: 20%;
+      margin-left: 60%;
+  }   
+}
+
+/* User details */
+
+.user-detail-info{
+  text-align: center;
+}
+
+.user-detail-info img{
+  width: 250px;
+  height: 250px;
+  display: block;
+  margin: 1rem auto;
+  border-radius: 50%;
+}
+
+.user-detail-info h2{
+  font-size: 1.6rem;
+  
+}
+.user-detail-info h2 span{
+  font-size: 2rem;
+}
+
+.user-detail-info h4{
+  font-size: 1rem;
+  margin: 1.5rem;
+  color: #282c34;
+}
+
+.user-detail-info h4 span{
+  font-size: 1.4rem;
+}
+
+.user-detail-info .btn-primary{
+  width: 50px;
+  height: 50px;
+  margin: 1rem;
+  background: #61dafb;
+  color: #f4f4f4;
+  outline: none;
+  border: none;
+  border-radius: 50%;
+}
+
+.user-detail-info .btn-primary:hover{
+  cursor: pointer;
+  color: #282c34;
+}
+
+.user-detail-info .btn-primary i{
+  font-size: 1.5rem;
+}
+
+.user-detail-info .active{
+  background: #282c34;
+  color: #f4f4f4;
+}
+
+.user-detail-info .active:hover{
+  color: #f4f4f4;
+}
+
+.user-detail-info .edit{
+  display: flex;
+  justify-content: center;
+}
+
+.user-detail-info .btn-secondary{
+  width: 12rem;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 1.5rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.user-detail-info .btn-edit{
+  background: #282c34;
+  color:#f4f4f4;
+}
+
+.user-detail-info .btn-delete{
+  background: #8d0303;
+  color: #f4f4f4;
+}
+
+/* User delete */
+
+.delete-user{
+  text-align: center;
+}
+
+.delete-user img{
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  display: block;
+  margin: 0.5rem auto;
+}
+
+.delete-user .buttons{
+  display: flex;
+  justify-content: center;
+}
+
+.delete-user .btn{
+  width: 10rem;
+  padding: 1rem 0;
+  margin: 1rem;
+  border: none;
+  offset: none;
+  cursor: pointer;
+  border-radius: 1.5rem;
+}
+
+.delete-user .btn-danger{
+  background: #8d0303;
+  color: #f4f4f4;
+}
+
+.delete-user .btn-secondary{
+  background: #282c34;
+  color: #f4f4f4;
+      text-decoration: none;
+}
+
+.delete-user .btn-primary{
+text-align: center;
+width: 80%;
+height: 3rem;
+margin: 1rem auto;
+padding: 1rem 0;
+border-radius: 2rem;
+background: #61dafb;
+color: #f4f4f4;
+text-decoration: none;
+display: block;
+}
+
+@media(min-width: 768px){
+  .delete-user .btn-primary{
+    width: 50%;
+  }
+}
+
+/* Form Messages */
+
+
+.msg{
+  text-align: center;
+  margin: 5rem auto;
+  width: 70%;
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.4);
+  background: #282c34;
+  color: #f4f4f4;
+}
+
+.msg h2{
+  font-size: 2rem;
+}
+
+.msg .btn-primary{
+  background: #61dafb;
+  color: #f4f4f4;
+  width: 60%;
+  padding: 1rem 0;
+  margin: 1rem auto;
+  text-decoration: none;
+  border-radius: 1.5rem;
+  display: block;
+  border: none;
+  outline: none;
+}
+
+
+/*  Footer */
+footer{
+  background: #282c34;
+  color: #f4f4f4;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.3rem;
+  border-top: 3px solid #61dafb;
+}
+
+
